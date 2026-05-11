@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TypeScript Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="calculator" aria-label="Calculator">
+        <header class="calculator__header">
+          <div>
+            <p class="calculator__title">TypeScript Calculator</p>
+            <p class="calculator__subtitle">Modern, typed, responsive UI</p>
+          </div>
+          <div class="calculator__status" id="errorIndicator" aria-live="polite"></div>
+        </header>
+
+        <div class="calculator__controls">
+          <button class="key key--function key--toggle" id="scientificToggle" data-action="toggle-scientific" type="button" aria-pressed="false">
+            Sci
+          </button>
+          <button class="key key--function key--toggle" id="themeToggle" data-action="toggle-theme" type="button" aria-pressed="false">
+            Theme
+          </button>
+        </div>
+
+        <div class="calculator__scientific hidden" id="scientificPanel" aria-label="Scientific functions">
+          <button class="key science-key key--function" data-action="scientific" data-value="square" type="button">x²</button>
+          <button class="key science-key key--function" data-action="scientific" data-value="sqrt" type="button">√</button>
+          <button class="key science-key key--function" data-action="scientific" data-value="reciprocal" type="button">1/x</button>
+          <button class="key science-key key--function" data-action="scientific" data-value="sin" type="button">sin</button>
+          <button class="key science-key key--function" data-action="scientific" data-value="cos" type="button">cos</button>
+          <button class="key science-key key--function" data-action="scientific" data-value="tan" type="button">tan</button>
+          <button class="key science-key key--function" data-action="scientific" data-value="ln" type="button">ln</button>
+          <button class="key science-key key--function" data-action="scientific" data-value="exp" type="button">eˣ</button>
+          <button class="key science-key key--function" data-action="scientific" data-value="abs" type="button">abs</button>
+        </div>
+
+        <div class="calculator__screen">
+          <div class="calculator__history" id="historyList" aria-label="Calculation history"></div>
+          <div class="calculator__display" aria-label="Calculator display">
+            <span class="calculator__previous" id="previousValue"></span>
+            <span class="calculator__current" id="currentValue">0</span>
+          </div>
+        </div>
+
+        <div class="calculator__keys">
+          <button class="key key--function" data-action="clear" type="button">C</button>
+          <button class="key key--function" data-action="delete" type="button">DEL</button>
+          <button class="key key--function" data-action="operator" data-value="/" type="button">÷</button>
+          <button class="key key--function" data-action="operator" data-value="*" type="button">×</button>
+
+          <button class="key" data-action="number" data-value="7" type="button">7</button>
+          <button class="key" data-action="number" data-value="8" type="button">8</button>
+          <button class="key" data-action="number" data-value="9" type="button">9</button>
+          <button class="key key--operator" data-action="operator" data-value="-" type="button">−</button>
+
+          <button class="key" data-action="number" data-value="4" type="button">4</button>
+          <button class="key" data-action="number" data-value="5" type="button">5</button>
+          <button class="key" data-action="number" data-value="6" type="button">6</button>
+          <button class="key key--operator" data-action="operator" data-value="+" type="button">+</button>
+
+          <button class="key" data-action="number" data-value="1" type="button">1</button>
+          <button class="key" data-action="number" data-value="2" type="button">2</button>
+          <button class="key" data-action="number" data-value="3" type="button">3</button>
+          <button class="key key--equal" data-action="equals" type="button">=</button>
+
+          <button class="key key--zero" data-action="number" data-value="0" type="button">0</button>
+          <button class="key" data-action="decimal" data-value="." type="button">.</button>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./dist/main.js"></script>
+  </body>
+</html>
